@@ -28,6 +28,7 @@ void heap_insert(Heap *H, int val)
   else
     parent = pos/2;
 
+  /* bubble up */
   while(H->arr[parent] > H->arr[pos]) {
     tmp = H->arr[parent];
     H->arr[parent] = H->arr[pos];
@@ -65,6 +66,7 @@ int extract_min(Heap* H)
         child++;
     }
 
+    /* bubble down */
     while(child != 0 && arr[pos-1] > arr[child-1]) {
       tmp = arr[child-1];
       arr[child-1] = arr[pos-1];
